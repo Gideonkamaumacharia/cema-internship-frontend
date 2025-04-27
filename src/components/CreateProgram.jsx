@@ -8,6 +8,8 @@ export default function CreateProgram({ callApi }) {
   const handleCreate = async () => {
     setLoading(true);
     const res = await callApi('/programs/create', 'POST', program);
+    if (res && res.message) {
+      alert(res.message)}
     setResult(res);
     setProgram({ name: '', description: '' });
     setLoading(false);
