@@ -16,22 +16,22 @@ Role-based Admin Panel for provisioning doctor API keys
 
 # Directory Structure
 
-frontend/
-├── public/
-├── src/
-│   ├── App.jsx             # Main router & layout
-│   ├── main.jsx            # ReactDOM render entrypoint
-│   ├── components/         # Reusable UI components
-│   │   ├── LandingPage.jsx
-│   │   ├── ApiKeyPrompt.jsx
-│   │   ├── RegisterClient.jsx
-│   │   ├── SearchClients.jsx
-│   │   ├── ViewClientProfile.jsx
-│   │   ├── CreateProgram.jsx
-│   │   ├── EnrollClient.jsx
-│   │   └── AdminPanel.jsx
-├── vite.config.js          # Dev server proxy configuration
-└── package.json            # Dependencies & scripts
+    frontend/
+    ├── public/
+    ├── src/
+    │   ├── App.jsx             # Main router & layout
+    │   ├── main.jsx            # ReactDOM render entrypoint
+    │   ├── components/         # Reusable UI components
+    │   │   ├── LandingPage.jsx
+    │   │   ├── ApiKeyPrompt.jsx
+    │   │   ├── RegisterClient.jsx
+    │   │   ├── SearchClients.jsx
+    │   │   ├── ViewClientProfile.jsx
+    │   │   ├── CreateProgram.jsx
+    │   │   ├── EnrollClient.jsx
+    │   │   └── AdminPanel.jsx
+    ├── vite.config.js          # Dev server proxy configuration
+    └── package.json            # Dependencies & scripts
 
 # Setup & Run
 
