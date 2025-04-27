@@ -8,6 +8,9 @@ export default function AdminPanel({ callApi }) {
   const handleCreate = async () => {
     setLoading(true);
     const res = await callApi('/admin/doctors', 'POST', form);
+    if (res && res.message) {
+      alert(res.message);
+    }
     setResult(res);
     setForm({ name: '', email: '' });
     setLoading(false);
