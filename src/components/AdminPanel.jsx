@@ -1,18 +1,21 @@
 import React, { useState } from 'react';
 
 export default function AdminPanel({ callApi }) {
-  const [form, setForm] = useState({ name: '', email: '' });
+  const [form, setForm] = useState({ name: '', email: '', is_admin: false });
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
 
   const handleCreate = async () => {
     setLoading(true);
-    const res = await callApi('/admin/doctors', 'POST', form);
+    const res = await callApi('/admin/doctors', 'POST', form,{
+      headers: {
+        'Content-Type': 'application/json'
+      }});
     if (res && res.message) {
       alert(res.message);
     }
     setResult(res);
-    setForm({ name: '', email: '' });
+    setForm({ name: '', email: '', is_admin: false });
     setLoading(false);
   };
 
@@ -35,6 +38,15 @@ export default function AdminPanel({ callApi }) {
           value={form.email}
           onChange={e => setForm({ ...form, email: e.target.value })}
         />
+        <div className="flex items-center">
+          <input
+            type="checkbox"
+            className="mr-2"
+            checked={form.is_admin}
+            onChange={e => setForm({ ...form, is_admin: e.target.checked })}
+          />
+          <label>Grant Super Admin Privileges</label>
+        </div>
       </div>
 
       <button
