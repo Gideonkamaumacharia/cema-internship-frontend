@@ -19,6 +19,9 @@ export default function EnrollClient({ callApi }) {
   const handleEnroll = async () => {
     setLoading(true);
     const res = await callApi(`/enrollments/${clientId}`, 'POST', { program_ids: selected });
+    if (res && res.message) {
+      alert(res.message);
+    }
     setResult(res);
     setClientId('');
     setSelected([]);
