@@ -12,6 +12,8 @@ export default function RegisterClient({ callApi }) {
 
   const handleSubmit = async () => {
     const res = await callApi('/clients/register', 'POST', data);
+    if (res && res.message) {
+      alert(res.message)}
     setResult(res);
     setData({ first_name: '', last_name: '', date_of_birth: '', gender: 'Male', contact_info: '' });
   };
