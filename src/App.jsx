@@ -54,7 +54,7 @@ export default function App() {
     if (stored) {
       setApiKey(stored);
       setVerifying(true);
-      fetch('/api/auth/validate', { headers: { 'API-KEY': stored } })
+      fetch('https://cema-internship-project.onrender.com/api/auth/validate', { headers: { 'API-KEY': stored } })
         .then(r => r.json())
         .then(data => {
           if (data.doctor) {
@@ -86,7 +86,7 @@ export default function App() {
       opts.headers['Content-Type'] = 'application/json';
       opts.body = JSON.stringify(body);
     }
-    const res = await fetch(`/api${path}`, opts);
+    const res = await fetch('https://cema-internship-project.onrender.com/api' + path, opts);
     return res.json();
   }
 

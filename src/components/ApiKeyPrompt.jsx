@@ -17,7 +17,7 @@ export default function ApiKeyPrompt({ onSave }) {
     setError('');
     try {
       // Validate against backend
-      const res = await fetch('/api/auth/validate', {
+      const res = await fetch('https://cema-internship-project.onrender.com/api/auth/validate', {
         method: 'GET',
         headers: { 'API-KEY': trimmed }
       });
