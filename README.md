@@ -14,6 +14,10 @@ Client enrollment via checkbox list
 
 Role-based Admin Panel for provisioning doctor API keys
 
+# Deployed Application
+
+You can access the deployed Health Information Management System frontend [here](https://cemahealthportal.netlify.app/).
+
 # Directory Structure
 
     frontend/
